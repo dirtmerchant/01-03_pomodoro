@@ -22,13 +22,16 @@ def print_header():
 
 def start_pomodoro_timer():
     while True:
-        cmd = input('Start a new [p]omodoro task, [b]reak, or e[x]it?')
+        cmd = input('Start a new [p]omodoro task, [b]reak, [c]ustom time, or e[x]it?')
         if cmd == 'p':
             print('Time to work')
             t.sleep(25)
         elif cmd == 'b':
             print('Time for a break')
             t.sleep(5)
+        elif cmd == 'c':
+            custom_time = int(input('Enter a custom time interval (0-99)'))
+            t.sleep(custom_time)
         elif cmd == 'x':
             print('Exiting')
             break
